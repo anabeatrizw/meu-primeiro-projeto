@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Painel de administração da ONG Lutando Contra Fome: gerencie projetos e métricas.">
+    <title>ONG Lutando Contra Fome - Painel Admin</title>
+</head>
+<body>
+    <header>
+        <h1>ONG Lutando Contra Fome - Painel do Administrador</h1>
+        <nav>
+            <ul>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="admin.html">Painel Admin</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="institucional">
+            <h2 id="institucional">Gerenciamento de Informações Institucionais</h2>
+            <p>Atualize missão, visão, valores e histórico da ONG.</p>
+            <form action="/update-institucional" method="post">
+                <label for="missao">Missão:</label>
+                <textarea id="missao" name="missao" required></textarea>
+                <label for="visao">Visão:</label>
+                <textarea id="visao" name="visao" required></textarea>
+                <label for="valores">Valores:</label>
+                <textarea id="valores" name="valores" required></textarea>
+                <label for="historico">Nosso histórico:</label>
+                <textarea id="historico" name="historico" required></textarea>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </section>
+
+        <section aria-labelledby="projetos">
+            <h2 id="projetos">Cadastrar e Editar Projetos</h2>
+            <p>Adicione ou modifique projetos sociais, incluindo fotos e vídeos.</p>
+            <form action="/submit-projeto" method="post">
+                <fieldset>
+                    <legend>Informações Básicas</legend>
+                    <label for="nome-projeto">Nome do Projeto:</label>
+                    <input type="text" id="nome-projeto" name="nome" required maxlength="100">
+                    <label for="categoria-projeto">Categoria:</label>
+                    <input type="text" id="categoria-projeto" name="categoria" required maxlength="100">
+                    <label for="descricao-projeto">Descrição:</label>
+                    <textarea id="descricao-projeto" name="descricao" required maxlength="500"></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Detalhes e Recursos</legend>
+                    <label for="orcamento-projeto">Orçamento Estimado (R$):</label>
+                    <input type="number" id="orcamento-projeto" name="orcamento" min="0" required>
+                    <label for="data-inicio">Data de Início:</label>
+                    <input type="date" id="data-inicio" name="dataInicio" required>
+                    <label for="local-projeto">Local:</label>
+                    <input type="text" id="local-projeto" name="local" required maxlength="100">
+                </fieldset>
+                <fieldset>
+                    <legend>Mídia</legend>
+                    <label for="foto-projeto">URL da Foto:</label>
+                    <input type="url" id="foto-projeto" name="foto" placeholder="https://exemplo.com/foto.jpg">
+                    <label for="video-projeto">URL do Vídeo:</label>
+                    <input type="url" id="video-projeto" name="video" placeholder="https://exemplo.com/video.mp4">
+                </fieldset>
+                <button type="submit">Cadastrar Projeto</button>
+                <button type="reset">Limpar</button>
+            </form>
+            <ul>
+                <li>Projeto Alimentando Vidas - <a href="#">Editar</a></li>
+                <li>Projeto Plantando Esperança - <a href="#">Editar</a></li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="relatorios">
+            <h2 id="relatorios">Acompanhar Relatórios de Engajamento</h2>
+            <p>Visualize dados de visitantes, voluntários e doações.</p>
+            <table>
+                <caption>Métricas de Engajamento</caption>
+                <thead>
+                    <tr>
+                        <th>Métrica</th>
+                        <th>Valor</th>
+                        <th>Período</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Visitantes Únicos</td>
+                        <td>15.000</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td>Voluntários Ativos</td>
+                        <td>200</td>
+                        <td>2024</td>
+                    </tr>
+                    <tr>
+                        <td>Doações Totais (R$)</td>
+                        <td>50.000</td>
+                        <td>2024</td>
+                    </tr>
+                </tbody>
+            </table>
+            <article>
+                <h3>Relatórios Detalhados</h3>
+                <ul>
+                    <li><a href="#">Relatório de Engajamento Mensal (PDF)</a></li>
+                    <li><a href="#">Análise de Visitantes (PDF)</a></li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ONG Lutando Contra Fome. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
