@@ -1,0 +1,272 @@
+/* =====================================
+   ONG Lutando Contra Fome - Design System Unificado
+   ===================================== */
+
+/* -------------------------------
+   VARIÁVEIS GERAIS
+--------------------------------*/
+:root {
+  /* Paleta de cores */
+  --color-primary-900: #0b6b3f;
+  --color-primary-700: #d67200;
+  --color-primary-500: #2bb06e;
+  --color-primary-300: #aef0c6;
+  --color-secondary-500: #c94b4b;
+
+  --neutral-900: #185ff7;
+  --neutral-700: #fc13d5;
+  --neutral-500: #000000;
+  --neutral-300: #ffdf27;
+  --neutral-100: #f8fafc;
+  --white: #ffffff;
+
+  --success: var(--color-primary-500);
+  --danger: #ef4444;
+
+  /* Tipografia */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --type-xxl: 2.25rem;
+  --type-xl: 1.5rem;
+  --type-lg: 1.125rem;
+  --type-md: 1rem;
+  --type-sm: 0.875rem;
+
+  /* Espaçamentos */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Outros */
+  --radius-md: 12px;
+  --shadow-sm: 0 1px 5px rgba(0,0,0,0.08);
+}
+
+/* -------------------------------
+   RESET / BASE
+--------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: linear-gradient(180deg, var(--neutral-100), #fff);
+  color: var(--neutral-900);
+  text-align: center;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* -------------------------------
+   CABEÇALHO / MENU
+--------------------------------*/
+header {
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-primary-300), var(--white));
+  padding: var(--space-3) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+header h1 {
+  font-size: var(--type-xl);
+  margin-bottom: var(--space-2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--neutral-900);
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+nav a:hover {
+  background: rgba(19, 138, 83, 0.1);
+}
+
+/* -------------------------------
+   LAYOUT PRINCIPAL
+--------------------------------*/
+main {
+  width: 100%;
+  max-width: 900px;
+  padding: var(--space-5) var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+/* Seções */
+section {
+  background: var(--white);
+  width: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Títulos e textos */
+h2 {
+  font-size: var(--type-xl);
+  color: var(--color-primary-700);
+  margin-bottom: var(--space-2);
+}
+
+p {
+  font-size: var(--type-md);
+  color: var(--neutral-700);
+  max-width: 700px;
+}
+
+/* Imagens */
+figure {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-3) 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* -------------------------------
+   FORMULÁRIOS
+--------------------------------*/
+form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+fieldset {
+  width: 100%;
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+legend {
+  font-weight: bold;
+  color: var(--color-primary-700);
+}
+
+label {
+  align-self: flex-start;
+  font-weight: 500;
+  color: var(--neutral-700);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-300);
+  font-size: var(--type-md);
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(43,176,110,0.15);
+}
+
+/* -------------------------------
+   BOTÕES
+--------------------------------*/
+button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: linear-gradient(90deg, var(--color-primary-700), var(--color-primary-500));
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(19,138,83,0.25);
+}
+
+button[type="reset"] {
+  background: var(--neutral-300);
+  color: var(--neutral-900);
+}
+
+/* -------------------------------
+   CARDS DE PROJETOS
+--------------------------------*/
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.card {
+  background: var(--white);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* -------------------------------
+   RODAPÉ
+--------------------------------*/
+footer {
+  width: 100%;
+  text-align: center;
+  padding: var(--space-4) 0;
+  color: var(--neutral-500);
+  font-size: var(--type-sm);
+  border-top: 1px solid var(--neutral-300);
+  margin-top: var(--space-5);
+}
+
+/* -------------------------------
+   RESPONSIVIDADE
+--------------------------------*/
+@media (max-width: 600px) {
+  main { padding: var(--space-2); }
+  section { padding: var(--space-2); }
+  h1, h2 { font-size: 1.25rem; }
+} 
